@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Website</title>
+	<!-- 不能写外链样式 -->
+	<style>
+		body {
+			background: skyblue;
+			color: #fff;
+			padding: 30px;
+		}
+		h1 {
+			font-size: 48px;
+			letter-spacing: 2px;
+			text-align:center;
+		}
+		p {
+			font-size: 16px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<% include ../public/nav.ejs %>
+	<h1>这是第<%= id %>篇博客</h1>
+	<p>
+		<!-- <strong>标题:</strong><%= data.title %>
+		<strong>内容:</strong><%= data.body %>
+		<strong>作者:</strong><%= data.author %> -->
+
+		<!-- 遍历数组拿数据有等号,逻辑没等号 -->
+		<ul>
+			<% data.forEach(function(sbqitem){ %>
+				<li>
+					<strong>标题:</strong><%= sbqitem.title %>
+					<strong>内容:</strong><%= sbqitem.body %>
+					<strong>作者:</strong><%= sbqitem.author %>
+				</li>
+			<% })	%>
+		</ul>
+
+	</p>
+</body>
+</html>
